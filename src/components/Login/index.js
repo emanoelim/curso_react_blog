@@ -16,7 +16,15 @@ class Login extends Component {
     this.login = this.login.bind(this);
   }
 
+  componentDidMount() {
+    // Usuário logado? Então não vai para a tela de login de novo
+    if (firebase.getCurrent()) {
+      return this.props.history.replace('/dashboard');
+    }
+  }
+
   entrar(e) {
+    this.login();
     e.preventDefault();
   }
 
@@ -36,6 +44,7 @@ class Login extends Component {
           return null;
         }
       })
+      this.props.history.replace('/dashboard');
     }
     catch(error) {
       alert(error.message);
