@@ -12,13 +12,32 @@ class Register extends Component {
       email: "",
       password: "",
     };
+
+    this.register = this.register.bind(this);
+    this.onRegister = this.onRegister.bind(this);
+  }
+
+  register(e) {
+    e.preventDefault();
+    this.onRegister();
+  }
+
+  onRegister = async() => {
+    try{
+      const {nome, email, password} = this.state;
+      await firebase.register(nome, email, password);
+      this.props.history.replace('/dashboard');
+    }
+    catch(error) {
+      alert(error.message);
+    }
   }
 
   render() {
     return(
       <div>
         <h1 className="register-h1">Novo usuário</h1>
-        <form id="register">
+        <form onSubmit={this.register} id="register">
           <label>Nome: </label>
           <input type="text" value={this.state.nome} autoFocus autoComplete="off"
            onChange={(e) => this.setState({nome: e.target.value})}
@@ -30,7 +49,7 @@ class Register extends Component {
            placeholder="exemplo@exemplo.com"/>
 
           <label>Senha: </label>
-          <input type="text" value={this.state.password} autoComplete="off"
+          <input type="password" value={this.state.password} autoComplete="off"
            onChange={(e) => this.setState({password: e.target.value})}
            placeholder="********"/>
 

@@ -33,5 +33,4 @@ form#register button {
   max-width: 680px;
   margin: 30px auto 0;
   display: flex;
-  flex-direction: column;
 }
