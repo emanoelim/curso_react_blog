@@ -59,10 +59,12 @@ class Login extends Component {
           <input type="email" autoComplete="off" autofocus value={this.state.email}
            onChange={(e) => this.setState({email: e.target.value})}
            placeholder="exemplo@exemplo.com"/>
+
           <label>Senha: </label>
           <input type="password" autoComplete="off" value={this.state.password}
            onChange={(e) => this.setState({password: e.target.value})}
            placeholder="********"/>
+           
           <button type="submit">Entrar</button>
           <Link to="/register">Ainda não tenho uma conta.</Link>
         </form>

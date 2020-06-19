@@ -3,7 +3,7 @@ import 'firebase/database';
 import 'firebase/auth';
 
 let firebaseConfig = {
-  apiKey:process.env.API_KEY,
+  apiKey:"AIzaSyB3aoXd7gDAA9g6Iv4COwSEsk_holFSVEk",
   authDomain:process.env.AUTH_DOMAIN,
   databaseURL:"https://reactapp-52a9f.firebaseio.com",
   projectId:process.env.PROJECT_ID,
