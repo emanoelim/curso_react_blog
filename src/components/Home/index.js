@@ -22,6 +22,7 @@ class Home extends Component {
           autor: childItem.val().autor,
         })
       });
+      state.posts.reverse(); // mostrar do mais recente para o mais antigo
       this.setState(state);
     })
   }

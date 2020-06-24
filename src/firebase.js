@@ -3,12 +3,13 @@ import 'firebase/database';
 import 'firebase/auth';
 import 'firebase/storage';
 
+
 let firebaseConfig = {
-  apiKey:"AIzaSyB3aoXd7gDAA9g6Iv4COwSEsk_holFSVEk",
+  apiKey:process.env.API_KEY,
   authDomain:process.env.AUTH_DOMAIN,
-  databaseURL:"https://reactapp-52a9f.firebaseio.com",
+  databaseURL:process.env.DB_URL,
   projectId:process.env.PROJECT_ID,
-  storageBucket:"reactapp-52a9f.appspot.com",
+  storageBucket:process.env.STORAGE_BUCKET,
   messagingSenderId:process.env.MS_ID,
   appId:process.env.APP_ID,
 };

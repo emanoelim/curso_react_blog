@@ -21,7 +21,7 @@ class Dashboard extends Component {
 
   logout = async () => {
     await firebase.logout()
-    .catch((error)=>{
+    .catch((error) => {
       console.log(error);
     });
     this.props.history.push('/');
